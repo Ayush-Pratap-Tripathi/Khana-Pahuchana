@@ -1,0 +1,194 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+}
+
+.app {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Header Styling */
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #ff6347; /* Tomato color */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.Logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    height: 50px;
+    width: auto;
+}
+
+.nav-items ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-items li {
+    cursor: pointer;
+    font-size: 18px;
+    font-weight: 500;
+    color: #fff;
+    transition: color 0.3s;
+}
+
+.nav-items li:hover {
+    color: #ffcccb; /* Light coral */
+}
+
+/* Body Styling */
+.body {
+    padding: 20px;
+    background-color: #fff;
+    flex-grow: 1;
+}
+
+.search {
+    margin-bottom: 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    background-color: #f1f1f1;
+}
+
+.res-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    align-content: center;
+}
+
+/* Restaurant Card Styling */
+.res-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between; /* Ensures all elements are evenly spaced */
+    padding: 15px;
+}
+
+.res-card .delivery-time {
+    font-size: 14px;
+    font-weight: bold;
+    color: #333;
+    margin-top: auto; /* Pushes it to the bottom */
+    background: #ffebcd;
+    padding: 5px 10px;
+    border-radius: 5px;
+    display: block; /* Ensures it's visible */
+}
+
+
+.res-card:hover {
+    cursor: pointer;
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.res-card img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.res-card h3 {
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+.res-card .cuisines {
+    font-size: 14px;
+    color: #666;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.res-card .rating {
+    font-size: 16px;
+    color: #ffa41b; /* Star color */
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .Header {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+    }
+
+    .nav-items ul {
+        flex-direction: column;
+        gap: 10px;
+        width: 100%;
+        padding: 10px 0;
+    }
+
+    .nav-items li {
+        font-size: 16px;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .res-container {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .res-card img {
+        height: 120px;
+    }
+}
+
+@media (max-width: 480px) {
+    .Header {
+        padding: 10px;
+    }
+
+    .nav-items li {
+        font-size: 14px;
+    }
+
+    .search {
+        font-size: 14px;
+        padding: 8px;
+    }
+
+    .res-card {
+        padding: 10px;
+    }
+
+    .res-card img {
+        height: 100px;
+    }
+}

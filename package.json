@@ -1,0 +1,38 @@
+{
+  "name": "khana-pahuchana",
+  "version": "1.0.0",
+  "description": "Dummy food delivery app",
+  "main": "App.js",
+  "scripts": {
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Ayush-PratapTripathi/Khana-Pahuchana.git"
+  },
+  "keywords": [
+    "Food",
+    "Delivery",
+    "Delivery",
+    "Learning"
+  ],
+  "author": "Ayush Pratap",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Ayush-PratapTripathi/Khana-Pahuchana/issues"
+  },
+  "homepage": "https://github.com/Ayush-PratapTripathi/Khana-Pahuchana#readme",
+  "devDependencies": {
+    "parcel": "^2.13.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^19.0.0",
+    "react-dom": "^19.0.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
