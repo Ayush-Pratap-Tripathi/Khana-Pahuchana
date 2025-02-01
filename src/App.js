@@ -1,26 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
-import logo from "./logo.png";
+import Header from "./components/Header";
+import Body from "./components/Body";
 
-/*
-Header
-    -Logo
-    -Nav Items
-Body
-    -Search
-    -Resturant container
-        -Resturant card
-            -Image
-            -Name of Resturant
-            -Star Rating
-            -Couisines
-            -delivery-time
-Footer
-    -Copyright
-    -Links
-    -Address
-    -Contact
-*/
+
 const RestaurantCard = (props) => {
   const { resData } = props;
   const { name, cuisines, avgRating, deliveryTime, costForTwo, sla } =
@@ -1810,36 +1793,7 @@ const resList = [
   },
 ];
 
-const Body = () => {
-  return (
-    <div className="body">
-      <div className="search">Search</div>
-      <div className="res-container">
-        {resList.map((restaurant, index) => (
-          <RestaurantCard key={index} resData={restaurant} />
-        ))}
-      </div>
-    </div>
-  );
-};
 
-const Header = () => {
-  return (
-    <div className="Header">
-      <div className="Logo-container">
-        <img className="logo" src={logo} alt="Khana Pahuchana" />
-      </div>
-      <div className="nav-items">
-        <ul>
-          <li>Home</li>
-          <li>About us</li>
-          <li>Contact</li>
-          <li>Cart</li>
-        </ul>
-      </div>
-    </div>
-  );
-};
 
 const AppLayout = () => {
   return (
