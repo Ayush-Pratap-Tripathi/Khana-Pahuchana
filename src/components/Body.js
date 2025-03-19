@@ -1,9 +1,8 @@
 import { useState, useEffect } from "react";
-import restaurantList from "../API/restaurantList";
 import RestaurantCard from "./RestaurantCard";
 
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState(restaurantList);
+  const [listOfRestaurant, setListOfRestaurant] = useState();
 
   useEffect(() => {
     fetchData();
@@ -13,11 +12,11 @@ const Body = () => {
     const response = await fetch(
       `https://api.allorigins.win/get?url=${encodeURIComponent("https://www.swiggy.com/dapi/restaurants/list/v5?lat=26.569482&lng=85.5220799&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING")}`  
     );
-// parse the response's contents to json as it is returned in the form of string and it actually contains data from swiggy's api
+    // parse the response's contents to json as it is returned in the form of string and it actually contains data from swiggy's api
     const json = await response.json();
     const data = JSON.parse(json.contents);
 
-    console.log(data);
+    setListOfRestaurant(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   };
   
     return (
@@ -37,7 +36,7 @@ const Body = () => {
           </button>
         </div>
         <div className="res-container">
-          {listOfRestaurant.map((restaurant, index) => (
+          {listOfRestaurant?.map((restaurant, index) => (
             <RestaurantCard key={index} restaurantData={restaurant} />
           ))}
         </div>
