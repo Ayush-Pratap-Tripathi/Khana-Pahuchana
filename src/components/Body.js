@@ -2,7 +2,7 @@ import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
 
 const Body = () => {
-  const [listOfRestaurant, setListOfRestaurant] = useState();
+  const [listOfRestaurant, setListOfRestaurant] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -18,6 +18,14 @@ const Body = () => {
 
     setListOfRestaurant(data?.data?.cards[0]?.card?.card?.gridElements?.infoWithStyle?.restaurants)
   };
+
+  if (listOfRestaurant.length === 0) {
+    return (
+      <div className="loading">
+        <h1>Loading.....</h1>
+      </div>
+    )
+  }
   
     return (
       <div className="body">
