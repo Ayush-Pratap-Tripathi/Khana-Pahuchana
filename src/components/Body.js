@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./Shimmer";
 
 const Body = () => {
   const [listOfRestaurant, setListOfRestaurant] = useState([]);
@@ -22,7 +23,7 @@ const Body = () => {
   if (listOfRestaurant.length === 0) {
     return (
       <div className="loading">
-        <h1>Loading.....</h1>
+        <Shimmer />
       </div>
     )
   }
